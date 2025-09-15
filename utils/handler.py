@@ -31,13 +31,13 @@ async def send_alert(data, logger=None) -> Exception | None:
             await tg_bot.sendMessage(
                 chat_id=config.chat_id,
                 text=msg,
-                parse_mode="MARKDOWN_V2",
+                parse_mode="MarkdownV2",
             )
         except KeyError:
             await tg_bot.sendMessage(
                 chat_id=config.chat_id,
                 text=msg,
-                parse_mode="MARKDOWN_V2",
+                parse_mode="MarkdownV2",
             )
         except Exception as e:
             return e
