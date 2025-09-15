@@ -21,7 +21,7 @@ sec_key = os.getenv(
 # Telegram Settings
 send_telegram_alerts = True
 tg_token = os.getenv("BOT_TOKEN")  # Bot token. Get it from @Botfather
-channel = 0  # Channel ID (ex. -1001487568087)
+chat_id = os.getenv("CHAT_ID")  # Channel ID (ex. -1001487568087)
 
 # Discord Settings
 send_discord_alerts = False

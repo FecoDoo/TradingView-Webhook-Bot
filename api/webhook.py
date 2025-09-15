@@ -1,3 +1,4 @@
+import asyncio
 import config
 
 from utils.handler import send_alert
@@ -56,7 +57,7 @@ def webhook():
                 logger.info("Secured Key Matched")
                 logger.info("Sending Alert...")
 
-                e = send_alert(data, logger)
+                e = asyncio.run(send_alert(data, logger))
                 if e:
                     logger.error(f"Error sending alert: {e}")
                     return jsonify({"message": "Error sending alert"}), 500
