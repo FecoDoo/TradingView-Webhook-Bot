@@ -1,5 +1,7 @@
 FROM python:3.9-alpine
-LABEL Auther="fabston"
+LABEL Author="Kai"
+USER root
+
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN apk add gcc python3-dev openssl-dev musl-dev libffi-dev &&\

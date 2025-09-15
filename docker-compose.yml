@@ -1,9 +1,18 @@
 ---
-version: '3.9'
 services:
-    tradingview-webhook-bot:
-        build: .
-        container_name: tradingview-webhook-bot
-        ports:
-            - '80:80'
-        restart: unless-stopped
+  webhook:
+    build: .
+    container_name: bot
+    ports:
+      - '8080:8080'
+    restart: always
+    develop:
+      watch:
+        - action: sync
+          path: ./
+          target: /usr/src/app/
+
+networks:
+  bridge:
+    name: bridge
+    external: true
